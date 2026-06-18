@@ -544,6 +544,12 @@ ul { list-style: none; }
 .section--surface { background: var(--surface); }
 
 /* Fleet */
+.fleet-wrap {
+  width: 100%;
+}
+
+.fleet-hint { display: none; }
+
 .fleet {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1157,7 +1163,7 @@ ul { list-style: none; }
 }
 
 /* Responsive */
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .nav__links { display: flex; }
   .nav__phone { display: block; }
   .burger { display: none; }
@@ -1166,6 +1172,7 @@ ul { list-style: none; }
 
 @media (max-width: 1024px) {
   .fleet { grid-template-columns: repeat(2, 1fr); }
+  .fleet__card { aspect-ratio: 4/3; }
   .fleet__card:nth-child(2) { border-right: none; }
   .fleet__card { border-bottom: var(--border-w) solid var(--border); }
   .fleet__card:nth-child(3),
@@ -1199,11 +1206,166 @@ ul { list-style: none; }
   .macro-block__img { border-right: none; border-bottom: var(--border-w) solid var(--border); }
 }
 
-@media (max-width: 640px) {
-  .section { padding: 64px 0; }
-  .fleet { grid-template-columns: 1fr; }
-  .fleet__card { border-right: none; aspect-ratio: 16/9; }
-  .fleet__card:last-child { border-bottom: none; }
+/* Mobile & small tablets */
+@media (max-width: 768px) {
+  :root {
+    --nav-h: 60px;
+  }
+
+  .container { padding: 0 16px; }
+
+  /* Hero — компактний перший екран */
+  .hero {
+    min-height: min(72dvh, 580px);
+  }
+
+  .hero__content {
+    padding: 32px 0 48px;
+  }
+
+  .hero__badge {
+    padding: 6px 12px;
+    margin-bottom: 16px;
+  }
+
+  .hero__badge .mono { font-size: 0.6rem; }
+
+  .hero__title {
+    font-size: clamp(2.4rem, 10vw, 3.2rem);
+    margin-bottom: 16px;
+  }
+
+  .hero__desc {
+    font-size: 0.95rem;
+    margin-bottom: 24px;
+    line-height: 1.55;
+  }
+
+  .hero__actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .hero__actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero__oil-svg {
+    width: 70%;
+    opacity: 0.15;
+  }
+
+  /* Секції */
+  .section { padding: 48px 0; }
+  .section-header { margin-bottom: 28px; }
+  .section-title { font-size: clamp(1.85rem, 7vw, 2.5rem); }
+  .section-header p { font-size: 0.95rem; }
+
+  /* Fleet — горизонтальний скрол замість 4 високих блоків */
+  #fleet .container:first-child { margin-bottom: 20px; }
+
+  .fleet-hint {
+    display: block;
+    margin-top: 12px;
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+  }
+
+  .fleet-wrap {
+    padding: 0 16px;
+    overflow: hidden;
+  }
+
+  .fleet {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    border-left: none;
+    border-right: none;
+    gap: 0;
+  }
+
+  .fleet::-webkit-scrollbar { display: none; }
+
+  .fleet__card {
+    flex: 0 0 min(72vw, 280px);
+    aspect-ratio: 3/2;
+    height: auto;
+    scroll-snap-align: start;
+    border-right: var(--border-w) solid var(--border);
+    border-bottom: none;
+  }
+
+  .fleet__card:last-child { border-right: none; }
+
+  .fleet__body { padding: 16px; }
+
+  .fleet__name { font-size: 1.35rem; }
+
+  .fleet__visc { font-size: 0.55rem; }
+
+  /* Nav */
+  .nav__actions .btn--primary { display: none; }
+  .nav__mark { width: 36px; height: 36px; font-size: 1.4rem; }
+  .nav__brand { font-size: 1rem; }
+  .nav__sub { font-size: 0.5rem; }
+  .nav__logo { gap: 8px; }
+  .theme-toggle { width: 38px; height: 38px; }
+  .burger { width: 38px; height: 38px; }
+
+  /* Brands */
+  .brand { padding: 28px 20px; }
+  .brand__name { font-size: 2.25rem; }
+  .brand__header { margin-bottom: 20px; }
+  .brand__icon { width: 52px; height: 52px; font-size: 1.5rem; }
+
+  /* Cards */
+  .card { padding: 24px 20px; }
+  .card__title { font-size: 1.4rem; }
+
+  /* Products */
+  .product { padding: 24px 20px; min-height: auto; }
+  .product__name { font-size: 1.25rem; }
+
+  /* Macro */
+  .macro-block { margin-top: 40px; }
+  .macro-block__img {
+    aspect-ratio: 16/9;
+    max-height: 200px;
+  }
+  .macro-block__text { padding: 28px 20px; }
+  .macro-block__text .display { font-size: 2rem; }
+
+  /* Form */
+  .form-wrap { padding: 24px 16px; }
+  .form-grid { grid-template-columns: 1fr; }
+
+  /* Why */
+  .why__row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 24px 0;
+  }
+
+  /* FAQ */
+  .faq__btn { padding: 18px 16px; }
+  .faq__q { font-size: 1.05rem; }
+  .faq__item.is-open .faq__a { padding: 0 16px 18px; }
+
+  /* CTA */
+  .cta-band { padding: 48px 0; }
+  .cta-band__actions { flex-direction: column; }
+  .cta-band__actions .btn { width: 100%; }
+
+  /* Modal */
+  .modal__box { padding: 32px 24px; }
+  .modal__title { font-size: 2rem; }
+
+  .btn { padding: 12px 18px; font-size: 0.65rem; }
 
   .products { grid-template-columns: 1fr; }
   .product { border-right: none !important; }
@@ -1213,11 +1375,12 @@ ul { list-style: none; }
   .card { border-right: none !important; }
   .card:not(:last-child) { border-bottom: var(--border-w) solid var(--border) !important; }
 
-  .form-grid { grid-template-columns: 1fr; }
-  .form-wrap { padding: 28px 20px; }
+  .ticker { padding: 10px 0; }
+  .ticker__item { font-size: 0.7rem; }
+}
 
-  .why__row { grid-template-columns: 1fr; gap: 12px; }
-
-  .nav__brand { font-size: 1.1rem; }
-  .btn { padding: 12px 20px; font-size: 0.65rem; }
+@media (max-width: 380px) {
+  .hero__title { font-size: 2.1rem; }
+  .nav__sub { display: none; }
+  .fleet__card { flex: 0 0 78vw; }
 }
