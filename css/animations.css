@@ -1,0 +1,52 @@
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+@keyframes scroll-line {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+@keyframes ticker-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker__track {
+  animation: ticker-scroll 40s linear infinite;
+}
+
+@keyframes oil-flow {
+  0% { stroke-dashoffset: 1000; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.hero__oil-path {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  stroke-dasharray: 1000;
+  animation: oil-flow 8s linear infinite;
+}
+
+@keyframes gauge-fill {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
+.preloader__fill {
+  animation: gauge-fill 1.8s ease-out forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker__track { animation: none; }
+  .hero__oil-path { animation: none; stroke-dashoffset: 0; }
+  .preloader__fill { animation: none; width: 100%; }
+  .hero__badge-dot { animation: none; }
+  .hero__scroll-line { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .cursor-dot, .cursor-ring { display: none !important; }
+}
