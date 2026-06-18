@@ -12,6 +12,7 @@
   --transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   --container: 1280px;
   --nav-h: 72px;
+  --gutter: 24px;
 }
 
 [data-theme="dark"] {
@@ -72,7 +73,9 @@ ul { list-style: none; }
   width: 100%;
   max-width: var(--container);
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 var(--gutter);
+  padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+  padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
 }
 
 /* Typography */
@@ -1141,6 +1144,7 @@ ul { list-style: none; }
   aspect-ratio: 1;
   background: url('../assets/images/oil-macro.jpg') center/cover;
   border-right: var(--border-w) solid var(--border);
+  min-height: 0;
 }
 
 .macro-block__text {
@@ -1170,7 +1174,25 @@ ul { list-style: none; }
   .hero__scroll { display: flex; }
 }
 
+/* Tablet: 769–1024px */
 @media (max-width: 1024px) {
+  :root {
+    --gutter: 20px;
+  }
+
+  .hero {
+    min-height: 78dvh;
+    align-items: flex-end;
+  }
+
+  .hero__content {
+    padding: 48px 0 64px;
+  }
+
+  .hero__title {
+    font-size: clamp(3rem, 8vw, 5rem);
+  }
+
   .fleet { grid-template-columns: repeat(2, 1fr); }
   .fleet__card { aspect-ratio: 4/3; }
   .fleet__card:nth-child(2) { border-right: none; }
@@ -1202,58 +1224,72 @@ ul { list-style: none; }
   .testimonial:last-child { border-bottom: none; }
 
   .footer__grid { grid-template-columns: 1fr; }
+
   .macro-block { grid-template-columns: 1fr; }
-  .macro-block__img { border-right: none; border-bottom: var(--border-w) solid var(--border); }
+  .macro-block__img {
+    aspect-ratio: 21 / 9;
+    max-height: 240px;
+    width: 100%;
+    border-right: none;
+    border-bottom: var(--border-w) solid var(--border);
+  }
+  .macro-block__text { padding: 36px 28px; }
+  .macro-block__text .display { font-size: 2.5rem; }
 }
 
-/* Mobile & small tablets */
+/* Mobile: до 768px */
 @media (max-width: 768px) {
   :root {
     --nav-h: 60px;
+    --gutter: 20px;
   }
 
-  .container { padding: 0 16px; }
-
-  /* Hero — компактний перший екран */
+  /* Hero — висота по контенту, без примусового 100vh */
   .hero {
-    min-height: min(72dvh, 580px);
+    min-height: 0;
+    align-items: flex-start;
+    display: block;
   }
 
   .hero__content {
-    padding: 32px 0 48px;
+    padding: 20px 0 28px;
+    width: 100%;
   }
 
   .hero__badge {
     padding: 6px 12px;
-    margin-bottom: 16px;
+    margin-bottom: 12px;
   }
 
-  .hero__badge .mono { font-size: 0.6rem; }
+  .hero__badge .mono { font-size: 0.58rem; }
 
   .hero__title {
-    font-size: clamp(2.4rem, 10vw, 3.2rem);
-    margin-bottom: 16px;
+    font-size: clamp(2.1rem, 9.5vw, 2.75rem);
+    margin-bottom: 12px;
+    line-height: 0.92;
   }
 
   .hero__desc {
-    font-size: 0.95rem;
-    margin-bottom: 24px;
-    line-height: 1.55;
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+    line-height: 1.5;
+    max-width: 100%;
   }
 
   .hero__actions {
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
   }
 
   .hero__actions .btn {
     width: 100%;
     justify-content: center;
+    padding: 11px 16px;
   }
 
   .hero__oil-svg {
-    width: 70%;
-    opacity: 0.15;
+    width: 55%;
+    opacity: 0.12;
   }
 
   /* Секції */
@@ -1274,7 +1310,8 @@ ul { list-style: none; }
   }
 
   .fleet-wrap {
-    padding: 0 16px;
+    padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
+    padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
     overflow: hidden;
   }
 
@@ -1318,30 +1355,32 @@ ul { list-style: none; }
   .burger { width: 38px; height: 38px; }
 
   /* Brands */
-  .brand { padding: 28px 20px; }
+  .brand { padding: 28px var(--gutter); }
   .brand__name { font-size: 2.25rem; }
   .brand__header { margin-bottom: 20px; }
   .brand__icon { width: 52px; height: 52px; font-size: 1.5rem; }
 
   /* Cards */
-  .card { padding: 24px 20px; }
+  .card { padding: 24px var(--gutter); }
   .card__title { font-size: 1.4rem; }
 
   /* Products */
-  .product { padding: 24px 20px; min-height: auto; }
+  .product { padding: 24px var(--gutter); min-height: auto; }
   .product__name { font-size: 1.25rem; }
 
-  /* Macro */
-  .macro-block { margin-top: 40px; }
+  /* Macro — компактне зображення */
+  .macro-block { margin-top: 32px; }
   .macro-block__img {
-    aspect-ratio: 16/9;
-    max-height: 200px;
+    aspect-ratio: 2 / 1;
+    height: 140px;
+    max-height: 140px;
+    width: 100%;
   }
-  .macro-block__text { padding: 28px 20px; }
-  .macro-block__text .display { font-size: 2rem; }
+  .macro-block__text { padding: 24px var(--gutter); }
+  .macro-block__text .display { font-size: 1.75rem; }
 
   /* Form */
-  .form-wrap { padding: 24px 16px; }
+  .form-wrap { padding: 24px var(--gutter); }
   .form-grid { grid-template-columns: 1fr; }
 
   /* Why */
@@ -1379,8 +1418,18 @@ ul { list-style: none; }
   .ticker__item { font-size: 0.7rem; }
 }
 
+@media (max-width: 480px) {
+  :root { --gutter: 18px; }
+
+  .hero__title { font-size: 2rem; }
+  .hero__desc { font-size: 0.85rem; }
+  .macro-block__img {
+    height: 120px;
+    max-height: 120px;
+  }
+}
+
 @media (max-width: 380px) {
-  .hero__title { font-size: 2.1rem; }
   .nav__sub { display: none; }
   .fleet__card { flex: 0 0 78vw; }
 }
