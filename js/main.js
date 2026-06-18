@@ -190,6 +190,7 @@
         if (data.success) {
           form.reset();
           modal.classList.add('is-open');
+          document.body.classList.add('modal-open');
         } else {
           alert('Помилка відправки. Спробуйте пізніше.');
         }
@@ -201,16 +202,21 @@
       }
     });
 
+    function closeModal() {
+      modal.classList.remove('is-open');
+      document.body.classList.remove('modal-open');
+    }
+
     if (closeBtn) {
-      closeBtn.addEventListener('click', () => modal.classList.remove('is-open'));
+      closeBtn.addEventListener('click', closeModal);
     }
 
     modal?.addEventListener('click', (e) => {
-      if (e.target === modal) modal.classList.remove('is-open');
+      if (e.target === modal) closeModal();
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') modal?.classList.remove('is-open');
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
     });
   }
 
