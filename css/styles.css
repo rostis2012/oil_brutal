@@ -551,8 +551,6 @@ ul { list-style: none; }
   width: 100%;
 }
 
-.fleet-hint { display: none; }
-
 .fleet {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1193,12 +1191,18 @@ ul { list-style: none; }
     font-size: clamp(3rem, 8vw, 5rem);
   }
 
+  /* Планшет: сітка 2×2, компактні горизонтальні картки */
   .fleet { grid-template-columns: repeat(2, 1fr); }
-  .fleet__card { aspect-ratio: 4/3; }
+  .fleet__card {
+    aspect-ratio: 16 / 10;
+    min-height: 0;
+  }
   .fleet__card:nth-child(2) { border-right: none; }
   .fleet__card { border-bottom: var(--border-w) solid var(--border); }
   .fleet__card:nth-child(3),
   .fleet__card:nth-child(4) { border-bottom: none; }
+  .fleet__name { font-size: 1.5rem; }
+  .fleet__body { padding: 20px; }
 
   .products { grid-template-columns: repeat(2, 1fr); }
   .product:nth-child(4n) { border-right: var(--border-w) solid var(--border); }
@@ -1298,50 +1302,29 @@ ul { list-style: none; }
   .section-title { font-size: clamp(1.85rem, 7vw, 2.5rem); }
   .section-header p { font-size: 0.95rem; }
 
-  /* Fleet — горизонтальний скрол замість 4 високих блоків */
+  /* Мобільний: вертикальний стек слайдів */
   #fleet .container:first-child { margin-bottom: 20px; }
 
-  .fleet-hint {
-    display: block;
-    margin-top: 12px;
-    font-size: 0.6rem;
-    color: var(--text-muted);
-    letter-spacing: 0.15em;
-  }
-
-  .fleet-wrap {
-    padding-left: max(var(--gutter), env(safe-area-inset-left, 0px));
-    padding-right: max(var(--gutter), env(safe-area-inset-right, 0px));
-    overflow: hidden;
-  }
+  .fleet-wrap { padding-top: 0; }
 
   .fleet {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    border-left: none;
-    border-right: none;
-    gap: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    border: var(--border-w) solid var(--border);
   }
-
-  .fleet::-webkit-scrollbar { display: none; }
 
   .fleet__card {
-    flex: 0 0 min(72vw, 280px);
-    aspect-ratio: 3/2;
-    height: auto;
-    scroll-snap-align: start;
-    border-right: var(--border-w) solid var(--border);
-    border-bottom: none;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+    border-right: none;
+    border-bottom: var(--border-w) solid var(--border);
   }
 
-  .fleet__card:last-child { border-right: none; }
+  .fleet__card:last-child { border-bottom: none; }
 
-  .fleet__body { padding: 16px; }
+  .fleet__body { padding: 16px var(--gutter); }
 
-  .fleet__name { font-size: 1.35rem; }
+  .fleet__name { font-size: 1.4rem; }
 
   .fleet__visc { font-size: 0.55rem; }
 
@@ -1431,5 +1414,5 @@ ul { list-style: none; }
 
 @media (max-width: 380px) {
   .nav__sub { display: none; }
-  .fleet__card { flex: 0 0 78vw; }
+  .fleet__card { aspect-ratio: 2 / 1; }
 }
