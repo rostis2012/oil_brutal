@@ -1,5 +1,4 @@
 /* INDUSTRIAL FORTRESS — ТОВ АЛДІ */
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -414,7 +413,7 @@ ul { list-style: none; }
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: url('../assets/images/hero-industrial.jpg') center/cover no-repeat;
+  background: url('../assets/images/hero-industrial.webp') center/cover no-repeat;
 }
 
 .hero__overlay {
@@ -477,8 +476,23 @@ ul { list-style: none; }
   font-size: clamp(1rem, 2vw, 1.25rem);
   max-width: 520px;
   color: var(--text-muted);
-  margin-bottom: 36px;
+  margin-bottom: 24px;
 }
+
+.geo-summary {
+  max-width: 560px;
+  margin-bottom: 32px;
+  padding: 16px 20px;
+  border: var(--border-w) solid var(--border);
+  background: var(--surface);
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.geo-summary strong { color: var(--text); }
+.geo-summary a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.geo-summary a:hover { color: var(--accent-hover); }
 
 .hero__actions {
   display: flex;
@@ -570,8 +584,10 @@ ul { list-style: none; }
 .fleet__img {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   filter: grayscale(40%) contrast(1.1);
   transition: transform 0.6s, filter 0.4s;
 }
@@ -732,7 +748,8 @@ ul { list-style: none; }
 .product__name {
   font-family: var(--font-display);
   font-size: 1.5rem;
-  margin-top: 12px;
+  font-weight: 400;
+  margin: 12px 0 0;
   text-transform: uppercase;
 }
 
@@ -931,6 +948,28 @@ ul { list-style: none; }
   font-size: 0.6rem;
   color: var(--text-muted);
 }
+
+.form-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.form-error {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border: var(--border-w) solid var(--accent);
+  background: var(--accent-dim);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text);
+  text-align: center;
+}
+
+.form-error[hidden] { display: none; }
 
 /* Testimonials */
 .testimonials {
@@ -1140,9 +1179,16 @@ ul { list-style: none; }
 
 .macro-block__img {
   aspect-ratio: 1;
-  background: url('../assets/images/oil-macro.jpg') center/cover;
   border-right: var(--border-w) solid var(--border);
   min-height: 0;
+  overflow: hidden;
+}
+
+.macro-block__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .macro-block__text {

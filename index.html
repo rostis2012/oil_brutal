@@ -1,34 +1,115 @@
 <!DOCTYPE html>
 <html lang="uk" data-theme="dark">
 <head>
+    <!-- SITE_URL: https://aldi-mukachevo.com.ua — обновить при публикации на VPS -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <meta name="description" content="Офіційний дилер HARTOL та Sunoco в Мукачево. Преміальні американські моторні оливи з доставкою по всьому Закарпаттю. Оптові поставки для СТО, автопарків та фермерів.">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self'; connect-src 'self' https://api.web3forms.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://api.web3forms.com;">
     <title>ТОВ «АЛДІ» — Офіційний дилер HARTOL та Sunoco | Оптові оливи Закарпаття</title>
+
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+    <link rel="canonical" href="https://aldi-mukachevo.com.ua/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="uk_UA">
+    <meta property="og:url" content="https://aldi-mukachevo.com.ua/">
+    <meta property="og:title" content="ТОВ «АЛДІ» — Офіційний дилер HARTOL та Sunoco | Закарпаття">
+    <meta property="og:description" content="Оптові поставки американських моторних олив у Мукачево. Офіційний дилер HARTOL та Sunoco. Доставка по Закарпаттю.">
+    <meta property="og:image" content="https://aldi-mukachevo.com.ua/assets/images/hero-industrial.webp">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ТОВ «АЛДІ» — HARTOL та Sunoco | Мукачево">
+    <meta name="twitter:description" content="Офіційний дилер моторних олив. Опт для СТО, автопарків та агробізнесу.">
+    <meta name="twitter:image" content="https://aldi-mukachevo.com.ua/assets/images/hero-industrial.webp">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700&family=Bebas+Neue&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "ТОВ «АЛДІ»",
-      "description": "Офіційний дилер преміальних моторних олив HARTOL та Sunoco в Закарпатській області.",
-      "url": "https://aldi-mukachevo.com.ua",
-      "telephone": "+380503720940",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "вул. Свалявська, 3А",
-        "addressLocality": "Мукачево",
-        "addressRegion": "Закарпатська область",
-        "postalCode": "89600",
-        "addressCountry": "UA"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "48.45",
-        "longitude": "22.72"
-      },
-      "openingHours": "Mo-Fr 09:00-18:00",
-      "areaServed": "Закарпатська область"
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://aldi-mukachevo.com.ua/#business",
+          "name": "ТОВ «АЛДІ»",
+          "description": "Офіційний дилер преміальних моторних олив HARTOL та Sunoco в Закарпатській області. Оптові поставки з 2014 року.",
+          "url": "https://aldi-mukachevo.com.ua",
+          "telephone": "+380503720940",
+          "email": "karpatia-om@ukr.net",
+          "image": "https://aldi-mukachevo.com.ua/assets/images/hero-industrial.webp",
+          "priceRange": "$$",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "вул. Свалявська, 3А",
+            "addressLocality": "Мукачево",
+            "addressRegion": "Закарпатська область",
+            "postalCode": "89600",
+            "addressCountry": "UA"
+          },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 48.45,
+            "longitude": 22.72
+          },
+          "openingHoursSpecification": [{
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }],
+          "areaServed": { "@type": "AdministrativeArea", "name": "Закарпатська область" },
+          "sameAs": [
+            "https://hartol.com/uk/",
+            "https://sunocoukraine.com/"
+          ]
+        },
+        {
+          "@type": "Organization",
+          "@id": "https://aldi-mukachevo.com.ua/#organization",
+          "name": "ТОВ «АЛДІ»",
+          "url": "https://aldi-mukachevo.com.ua",
+          "foundingDate": "2014",
+          "sameAs": [
+            "https://hartol.com/uk/",
+            "https://sunocoukraine.com/"
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {"@type":"Question","name":"Чи є у вас оригінальна продукція HARTOL та Sunoco?","acceptedAnswer":{"@type":"Answer","text":"Так, ми є офіційним дилером обох брендів у Закарпатській області. Вся продукція постачається безпосередньо від імпортера з гарантією оригінальності."}},
+            {"@type":"Question","name":"Яка доставка по Закарпаттю?","acceptedAnswer":{"@type":"Answer","text":"Здійснюємо доставку по всьому Закарпаттю. При замовленні від певного обсягу — доставка безкоштовна. Можливий самовивіз зі складу в Мукачево."}},
+            {"@type":"Question","name":"Чи працюєте ви з оптовими клієнтами?","acceptedAnswer":{"@type":"Answer","text":"Так, ми спеціалізуємося на оптових поставках для СТО, автопарків, фермерських господарств та корпоративних клієнтів."}},
+            {"@type":"Question","name":"Як підібрати оливу під мою техніку?","acceptedAnswer":{"@type":"Answer","text":"Менеджери безкоштовно підберуть оливу. Залиште заявку — зв'яжемося протягом 15 хвилин."}},
+            {"@type":"Question","name":"Чи є можливість самовивозу?","acceptedAnswer":{"@type":"Answer","text":"Так, самовивіз зі складу в Мукачево: вул. Свалявська, 3А."}},
+            {"@type":"Question","name":"Які умови для постійних клієнтів?","acceptedAnswer":{"@type":"Answer","text":"Спеціальні ціни, відстрочка платежу та персональний менеджер для постійних оптових клієнтів."}}
+          ]
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Андрій К." },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Після переходу на HARTOL 5W-30 двигун став працювати значно тихіше. Витрата масла практично нульова. Дякую команді АЛДІ за професійну консультацію.",
+          "itemReviewed": { "@id": "https://aldi-mukachevo.com.ua/#business" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Роман М." },
+          "reviewRating": { "@type": "Rating", "ratingValue": "4.5", "bestRating": "5" },
+          "reviewBody": "Використовуємо Sunoco на всьому автопарку (12 вантажівок). Олива відмінно тримає температуру навіть у спеку. Доставка завжди вчасно.",
+          "itemReviewed": { "@id": "https://aldi-mukachevo.com.ua/#business" }
+        },
+        {
+          "@type": "Review",
+          "author": { "@type": "Person", "name": "Василь П." },
+          "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+          "reviewBody": "Купував оливу для трактора. Дуже задоволений якістю та ціною. Менеджер підібрав саме те, що потрібно. Рекомендую всім фермерам!",
+          "itemReviewed": { "@id": "https://aldi-mukachevo.com.ua/#business" }
+        }
+      ]
     }
     </script>
 
@@ -112,9 +193,12 @@
                     для вашої техніки
                 </h1>
                 <p class="hero__desc">Офіційний дилер HARTOL та Sunoco в Мукачево. Оптові поставки американських моторних олив — від легкових авто до будівельної техніки. СТО, автопарки, фермерські господарства.</p>
+                <aside class="geo-summary" aria-label="Коротка інформація про компанію">
+                    <p><strong>ТОВ «АЛДІ»</strong> — офіційний дилер моторних олив <strong>HARTOL</strong> та <strong>Sunoco</strong> у <strong>Мукачево</strong> (Закарпатська область, Україна). Працюємо з <strong>2014</strong> року. Оптові поставки для СТО, автопарків та агробізнесу. Доставка по Закарпаттю. Телефон: <a href="tel:+380503720940">+38 (050) 372-09-40</a>.</p>
+                </aside>
                 <div class="hero__actions">
                     <a href="#lead-form" class="btn btn--primary">Підібрати оливу безкоштовно →</a>
-                    <a href="https://www.facebook.com/oleksandr.stognienko" target="_blank" rel="noopener" class="btn btn--outline">Відгуки клієнтів</a>
+                    <a href="#reviews" class="btn btn--outline">Відгуки клієнтів</a>
                 </div>
             </div>
             <div class="hero__scroll" aria-hidden="true">
@@ -161,7 +245,7 @@
             <div class="container fleet-wrap">
                 <div class="fleet reveal">
                     <article class="fleet__card">
-                        <div class="fleet__img" style="background-image:url('assets/images/fleet-car.jpg')"></div>
+                        <img class="fleet__img" src="assets/images/fleet-car.webp" alt="Моторні оливи HARTOL та Sunoco для легкових автомобілів" width="800" height="533" loading="lazy" decoding="async">
                         <div class="fleet__overlay"></div>
                         <div class="fleet__body">
                             <div class="fleet__code">SEG-01 / PASSENGER</div>
@@ -170,7 +254,7 @@
                         </div>
                     </article>
                     <article class="fleet__card">
-                        <div class="fleet__img" style="background-image:url('assets/images/fleet-truck.jpg')"></div>
+                        <img class="fleet__img" src="assets/images/fleet-truck.webp" alt="Оливи для вантажних автомобілів та автопарків" width="800" height="533" loading="lazy" decoding="async">
                         <div class="fleet__overlay"></div>
                         <div class="fleet__body">
                             <div class="fleet__code">SEG-02 / COMMERCIAL</div>
@@ -179,7 +263,7 @@
                         </div>
                     </article>
                     <article class="fleet__card">
-                        <div class="fleet__img" style="background-image:url('assets/images/fleet-agro.jpg')"></div>
+                        <img class="fleet__img" src="assets/images/fleet-agro.webp" alt="Мастильні матеріали для сільгосптехніки" width="800" height="533" loading="lazy" decoding="async">
                         <div class="fleet__overlay"></div>
                         <div class="fleet__body">
                             <div class="fleet__code">SEG-03 / AGRICULTURE</div>
@@ -188,7 +272,7 @@
                         </div>
                     </article>
                     <article class="fleet__card">
-                        <div class="fleet__img" style="background-image:url('assets/images/fleet-build.jpg')"></div>
+                        <img class="fleet__img" src="assets/images/fleet-build.webp" alt="Індустріальні оливи для будівельної техніки" width="800" height="533" loading="lazy" decoding="async">
                         <div class="fleet__overlay"></div>
                         <div class="fleet__body">
                             <div class="fleet__code">SEG-04 / INDUSTRIAL</div>
@@ -253,14 +337,14 @@
                     <p>Повний спектр мастильних матеріалів для будь-якого типу техніки.</p>
                 </div>
                 <div class="products reveal">
-                    <div class="product"><span class="product__code">CAT-01</span><span class="product__name">Моторні оливи</span></div>
-                    <div class="product"><span class="product__code">CAT-02</span><span class="product__name">Трансмісійні</span></div>
-                    <div class="product"><span class="product__code">CAT-03</span><span class="product__name">Гідравлічні</span></div>
-                    <div class="product"><span class="product__code">CAT-04</span><span class="product__name">ATF рідини</span></div>
-                    <div class="product"><span class="product__code">CAT-05</span><span class="product__name">Антифризи</span></div>
-                    <div class="product"><span class="product__code">CAT-06</span><span class="product__name">Мастила</span></div>
-                    <div class="product"><span class="product__code">CAT-07</span><span class="product__name">Індустріальні</span></div>
-                    <div class="product"><span class="product__code">CAT-08</span><span class="product__name">Гоночні оливи</span></div>
+                    <article class="product"><span class="product__code">CAT-01</span><h3 class="product__name">Моторні оливи</h3></article>
+                    <article class="product"><span class="product__code">CAT-02</span><h3 class="product__name">Трансмісійні</h3></article>
+                    <article class="product"><span class="product__code">CAT-03</span><h3 class="product__name">Гідравлічні</h3></article>
+                    <article class="product"><span class="product__code">CAT-04</span><h3 class="product__name">ATF рідини</h3></article>
+                    <article class="product"><span class="product__code">CAT-05</span><h3 class="product__name">Антифризи</h3></article>
+                    <article class="product"><span class="product__code">CAT-06</span><h3 class="product__name">Мастила</h3></article>
+                    <article class="product"><span class="product__code">CAT-07</span><h3 class="product__name">Індустріальні</h3></article>
+                    <article class="product"><span class="product__code">CAT-08</span><h3 class="product__name">Гоночні оливи</h3></article>
                 </div>
             </div>
         </section>
@@ -305,7 +389,9 @@
                     </article>
                 </div>
                 <div class="macro-block reveal">
-                    <div class="macro-block__img" role="img" aria-label="Макро зображення моторної оливи"></div>
+                    <div class="macro-block__img">
+                        <img src="assets/images/oil-macro.webp" alt="Макро зображення моторної оливи HARTOL та Sunoco" width="600" height="600" loading="lazy" decoding="async">
+                    </div>
                     <div class="macro-block__text">
                         <div class="eyebrow">Технологія змазування</div>
                         <div class="display">Загартовані оливи</div>
@@ -456,10 +542,11 @@
                     <p style="margin:12px auto 0">Залиште заявку — менеджер зв'яжеться протягом 15 хвилин.</p>
                 </div>
                 <div class="form-wrap reveal">
-                    <form id="lead-form-el" action="https://api.web3forms.com/submit" method="POST">
+                    <form id="lead-form-el" action="https://api.web3forms.com/submit" method="POST" novalidate>
                         <input type="hidden" name="access_key" value="9be3c2bf-5e7f-49eb-9faf-b2dd71d17b86">
                         <input type="hidden" name="subject" value="Нова заявка з лендингу ТОВ «АЛДІ»">
                         <input type="hidden" name="from_name" value="Сайт ТОВ АЛДІ (Мукачево)">
+                        <input type="checkbox" name="botcheck" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
                         <div class="form-grid">
                             <div class="form-field">
                                 <label for="name">Ваше ім'я *</label>
@@ -482,6 +569,7 @@
                                 <textarea id="message" name="message" placeholder="Потрібна олива для дизельного двигуна з турбіною..."></textarea>
                             </div>
                         </div>
+                        <div id="form-error" class="form-error" role="alert" hidden></div>
                         <div style="margin-top:28px">
                             <button type="submit" class="btn btn--primary" style="width:100%">Надіслати заявку</button>
                         </div>
@@ -499,20 +587,41 @@
                     <h2 class="section-title">Що кажуть клієнти</h2>
                 </div>
                 <div class="testimonials reveal">
-                    <blockquote class="testimonial">
-                        <div class="testimonial__stars">★★★★★</div>
-                        <p class="testimonial__text">"Після переходу на HARTOL 5W-30 двигун став працювати значно тихіше. Витрата масла практично нульова. Дякую команді АЛДІ за професійну консультацію."</p>
-                        <footer class="testimonial__author">Андрій К., Мукачево<div class="testimonial__meta">Audi A6 3.0 TDI</div></footer>
+                    <blockquote class="testimonial" itemscope itemtype="https://schema.org/Review">
+                        <meta itemprop="itemReviewed" content="ТОВ «АЛДІ»">
+                        <div class="testimonial__stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="5">
+                            <meta itemprop="bestRating" content="5">★★★★★
+                        </div>
+                        <p class="testimonial__text" itemprop="reviewBody">"Після переходу на HARTOL 5W-30 двигун став працювати значно тихіше. Витрата масла практично нульова. Дякую команді АЛДІ за професійну консультацію."</p>
+                        <footer class="testimonial__author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <span itemprop="name">Андрій К., Мукачево</span>
+                            <div class="testimonial__meta">Audi A6 3.0 TDI</div>
+                        </footer>
                     </blockquote>
-                    <blockquote class="testimonial">
-                        <div class="testimonial__stars">★★★★½</div>
-                        <p class="testimonial__text">"Використовуємо Sunoco на всьому автопарку (12 вантажівок). Олива відмінно тримає температуру навіть у спеку. Доставка завжди вчасно."</p>
-                        <footer class="testimonial__author">Роман М., Ужгород<div class="testimonial__meta">Власник автопарку</div></footer>
+                    <blockquote class="testimonial" itemscope itemtype="https://schema.org/Review">
+                        <meta itemprop="itemReviewed" content="ТОВ «АЛДІ»">
+                        <div class="testimonial__stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="4.5">
+                            <meta itemprop="bestRating" content="5">★★★★½
+                        </div>
+                        <p class="testimonial__text" itemprop="reviewBody">"Використовуємо Sunoco на всьому автопарку (12 вантажівок). Олива відмінно тримає температуру навіть у спеку. Доставка завжди вчасно."</p>
+                        <footer class="testimonial__author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <span itemprop="name">Роман М., Ужгород</span>
+                            <div class="testimonial__meta">Власник автопарку</div>
+                        </footer>
                     </blockquote>
-                    <blockquote class="testimonial">
-                        <div class="testimonial__stars">★★★★★</div>
-                        <p class="testimonial__text">"Купував оливу для трактора. Дуже задоволений якістю та ціною. Менеджер підібрав саме те, що потрібно. Рекомендую всім фермерам!"</p>
-                        <footer class="testimonial__author">Василь П., с. Іванівці<div class="testimonial__meta">Фермерське господарство</div></footer>
+                    <blockquote class="testimonial" itemscope itemtype="https://schema.org/Review">
+                        <meta itemprop="itemReviewed" content="ТОВ «АЛДІ»">
+                        <div class="testimonial__stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+                            <meta itemprop="ratingValue" content="5">
+                            <meta itemprop="bestRating" content="5">★★★★★
+                        </div>
+                        <p class="testimonial__text" itemprop="reviewBody">"Купував оливу для трактора. Дуже задоволений якістю та ціною. Менеджер підібрав саме те, що потрібно. Рекомендую всім фермерам!"</p>
+                        <footer class="testimonial__author" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <span itemprop="name">Василь П., с. Іванівці</span>
+                            <div class="testimonial__meta">Фермерське господарство</div>
+                        </footer>
                     </blockquote>
                 </div>
             </div>
@@ -551,7 +660,6 @@
                 <div>
                     <div class="footer__heading">Адреса</div>
                     <p>89600, м. Мукачево<br>вул. Свалявська, 3А<br>Закарпатська область</p>
-                    <p style="margin-top:16px"><a href="https://www.facebook.com/oleksandr.stognienko" target="_blank" rel="noopener">Facebook →</a></p>
                 </div>
             </div>
             <div class="footer__bottom">

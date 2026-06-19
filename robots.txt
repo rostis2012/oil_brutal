@@ -1,0 +1,5 @@
+# SITE_URL: https://aldi-mukachevo.com.ua — обновить при публикации
+User-agent: *
+Allow: /
+
+Sitemap: https://aldi-mukachevo.com.ua/sitemap.xml

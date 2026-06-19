@@ -26,7 +26,7 @@
     if (!el) return;
 
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const delay = reduced ? 400 : 2000;
+    const delay = reduced ? 400 : 800;
 
     setTimeout(() => {
       el.classList.add('is-done');
@@ -167,6 +167,21 @@
   }
 
   /* ── Form ── */
+  function showFormError(msg) {
+    const el = document.getElementById('form-error');
+    if (!el) return;
+    el.textContent = msg;
+    el.hidden = false;
+    el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function clearFormError() {
+    const el = document.getElementById('form-error');
+    if (!el) return;
+    el.textContent = '';
+    el.hidden = true;
+  }
+
   function initForm() {
     const form = document.getElementById('lead-form-el');
     const modal = document.getElementById('success-modal');
@@ -175,6 +190,21 @@
 
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      clearFormError();
+
+      const name = form.querySelector('#name');
+      const phone = form.querySelector('#phone');
+      if (!name?.value.trim()) {
+        showFormError('Вкажіть ваше ім\'я.');
+        name?.focus();
+        return;
+      }
+      if (!phone?.value.trim() || phone.value.replace(/\D/g, '').length < 10) {
+        showFormError('Вкажіть коректний номер телефону.');
+        phone?.focus();
+        return;
+      }
+
       const btn = form.querySelector('button[type="submit"]');
       const orig = btn.innerHTML;
       btn.innerHTML = 'Надсилаємо...';
@@ -189,13 +219,14 @@
 
         if (data.success) {
           form.reset();
+          clearFormError();
           modal.classList.add('is-open');
           document.body.classList.add('modal-open');
         } else {
-          alert('Помилка відправки. Спробуйте пізніше.');
+          showFormError('Помилка відправки. Спробуйте пізніше.');
         }
       } catch {
-        alert('Помилка з\'єднання. Перевірте інтернет.');
+        showFormError('Помилка з\'єднання. Перевірте інтернет.');
       } finally {
         btn.innerHTML = orig;
         btn.disabled = false;
